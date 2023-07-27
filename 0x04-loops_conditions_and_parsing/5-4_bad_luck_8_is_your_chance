@@ -1,17 +1,14 @@
 #! /usr/bin/env bash
-#loops from 1 to 10 and:
-#displays bad luck for the 4th loop iteration
-#displays good luck for the 8th loop iteration
-#displays Best School for the other iterations
+#loops...,
 
 str="Best School"
 counter=0
 
 while [[ counter -ne 10 ]]; do
 	if [[ counter -eq 3 ]]; then
-		echo "bad luck"
+		echo bad luck
 	elif [[ counter -eq 7 ]]; then
-		echo "good luck"
+		echo good luck
 	else
 		echo "$str"
 	fi
