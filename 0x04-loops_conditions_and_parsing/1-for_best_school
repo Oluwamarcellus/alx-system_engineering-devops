@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+str="Best School"
+counter=0
+
+for (( counter=0; counter < 10; counter++ )); do
+echo "$str"
+done
