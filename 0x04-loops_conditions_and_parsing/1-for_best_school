@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#This script prints "Best School" 10x on the screem
 
 str="Best School"
 counter=0
