@@ -6,7 +6,7 @@ file="school"
 if [[ -e "$file" ]];
 then
 
-	echo "school files exists"
+	echo "school file exists"
 
 	if [[ -s "$file" ]];
 	then
