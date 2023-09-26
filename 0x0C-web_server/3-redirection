@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# installs nginx and configures it on a remote server
+
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+line="\\\trewrite ^/redirect_me http://pronic.tech permanent;"
+sudo sed -i "26i $line" /etc/nginx/sites-available/default
+service nginx restart
