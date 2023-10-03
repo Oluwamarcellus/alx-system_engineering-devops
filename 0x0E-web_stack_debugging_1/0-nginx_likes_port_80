@@ -1,0 +1,6 @@
+#!/bin/bash
+# Bash script that configures a server to use nginx
+
+apt-get update
+apt install nginx
+service nginx start
