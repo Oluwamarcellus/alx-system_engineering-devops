@@ -2,5 +2,5 @@
 # Bash script that configures a server to use nginx
 
 apt-get update
-apt install nginx
+apt-get install -y nginx
 service nginx start
