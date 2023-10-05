@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Bash script that configures a server to use nginx
 
 apt-get update
