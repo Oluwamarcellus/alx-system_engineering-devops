@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Bash script that configures a server to use nginx
-
-apt-get update
-apt-get install -y nginx
-service nginx start
+# Bash script that configures nginx
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
