@@ -7,7 +7,6 @@ import requests
 import sys
 import csv
 
-
 if __name__ == "__main__":
     id_ = sys.argv[1]
     url_u = "https://jsonplaceholder.typicode.com/users"
@@ -22,4 +21,4 @@ if __name__ == "__main__":
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         [writer.writerow(
             [id_, usr_data["username"], t.get("completed"), t.get("title")]
-         ) for t in todo_data]
+            ) for t in todo_data]
