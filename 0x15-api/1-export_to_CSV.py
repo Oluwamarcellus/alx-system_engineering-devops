@@ -18,12 +18,8 @@ if __name__ == "__main__":
     tod_res = requests.get(url_t, params={"userId": id_})
     todo_data = tod_res.json()
 
-    with open("{}.csv".format(id_), "w") as file:
+    with open("{}.csv".format(id_), "w", newline="") as file:
         csv_write = csv.writer(file, quoting=csv.QUOTE_ALL)
         for x in todo_data:
-            csv_write.writerow((
-                str(id_),
-                usr_data["username"],
-                x["completed"],
-                x["title"]
-                ))
+            dt = (str(id_), usr_data["username"], x["completed"], x["title"])
+            csv_write.writerow(dt)
