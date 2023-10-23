@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Records all tasks that are owned by the queried employee and return
-the info in a csv file
-"""
+"""Records all tasks that are owned by the queried employee."""
 import requests
 import sys
 import csv
