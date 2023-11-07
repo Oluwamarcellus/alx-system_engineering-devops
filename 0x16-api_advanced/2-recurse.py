@@ -2,11 +2,12 @@
 """
 LIST OF TITLES OF HOT POSTS
 """
-
 import requests
 
 
 after = None
+
+
 def recurse(subreddit, hot_list=[]):
     """
     recursive function that queries the Reddit API and returns
@@ -14,9 +15,11 @@ def recurse(subreddit, hot_list=[]):
     subreddit. If no results are found for the given subreddit,
     the function should return None.
     """
-    if not subreddit or type(subreddit) is not str:
-        return None
     global after
+
+    if not subreddit:
+        return None
+
     user_agent = {'User-Agent': 'Devmarc.tech'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     params = {'after': after}
