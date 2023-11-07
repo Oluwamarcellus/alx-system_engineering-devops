@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 HOW MANY SUBSCRIBERS FUNCTION
-i"""
+"""
 
 import requests
 
@@ -12,12 +12,17 @@ def number_of_subscribers(subreddit):
     of subscribers (not active users, total subscribers) for a
     given subreddit
     """
-    if not subreddit or type(subreddit) is not str:
+
+    if subreddit is None or not isinstance(subreddit, str):
         return 0
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    res = requests.get(url, params={"User-Agent": "devmarc.tech"})
+
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    response = requests.get(url, headers=user_agent)
+    results = response.json()
+
     try:
-        res = res.json()
-        return res.get("data", 0).get("subscribers", 0)
+        return results.get('data').get('subscribers')
+
     except Exception:
         return 0
