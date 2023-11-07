@@ -13,7 +13,7 @@ def number_of_subscribers(subreddit):
     given subreddit
     """
 
-    if subreddit is None or not isinstance(subreddit, str):
+    if not subreddit or type(subreddit) is not str:
         return 0
 
     user_agent = {'User-agent': 'Devmarc.tech'}
